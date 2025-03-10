@@ -42,8 +42,7 @@
                     email: document.getElementById("email").value,
                     phone: document.getElementById("phone").value,
                     guests: document.getElementById("guests").value,
-                    attending: document.querySelector('input[name="attending"]:checked') ? .value ||
-                        "",
+                    attending: document.querySelector('input[name="attending"]:checked')?.value || "",
                     message: document.getElementById("message").value
                 };
 
