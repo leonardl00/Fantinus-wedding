@@ -5,52 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wedding Invitation</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simple-parallax-js/5.6.2/simpleParallax.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background: url('/Fantinus-wedding/assets/bg.jpg') no-repeat center center;
-            background-size: cover;
             color: #4A4A4A;
+            overflow-x: hidden;
         }
-        
-        @media (max-width: 768px) {
-            body {
-                background: url('/Fantinus-wedding/assets/bg-vertical.jpg') no-repeat center center;
-                background-size: cover;
-            }
-        }
-        
-        .parallax {
+        .parallax-bg {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center;
+            height: 100vh;
             z-index: -1;
         }
-        
-        .gold-text {
-            color: #C89B3C;
-        }
-        .accent-bg {
-            background-color: #F4E1D2; /* Warm peachy beige */
-            padding: 2rem;
-            border-radius: 12px;
-            max-width: 600px;
-            margin: auto;
-        }
-        .highlight-text {
-            color: #D19E9E; /* Muted rose */
+        @media (max-width: 768px) {
+            .parallax-bg {
+                background: url('/Fantinus-wedding/assets/bg-vertical.jpg') no-repeat center center;
+                background-size: cover;
+            }
         }
     </style>
 </head>
 <body class="text-center">
-    <div class="parallax"></div>
+    <img src="/Fantinus-wedding/assets/bg.jpg" class="parallax-bg" alt="Wedding Background">
+    
     <div class="flex flex-col items-center justify-center min-h-screen">
         <div class="py-20 text-[60px] gold-text font-[Great Vibes] drop-shadow-lg">
             <h1>Fantinus & Delyn</h1>
@@ -122,6 +104,12 @@
             }, 1000);
         }
         countdown();
+        
+        // Initialize SimpleParallax
+        document.addEventListener("DOMContentLoaded", function() {
+            var image = document.querySelector(".parallax-bg");
+            new simpleParallax(image, { scale: 1.2, delay: 0.6, transition: 'cubic-bezier(0,0,0,1)' });
+        });
     </script>
 </body>
 </html>
