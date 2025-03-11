@@ -10,65 +10,65 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
+            background: url('/Fantinus-wedding/assets/bg2.webp') no-repeat center center fixed;
+            background-size: cover;
+            color: #4A4A4A;
+        }
+        .gold-text {
+            color: #C89B3C;
+        }
+        .accent-bg {
+            background-color: #F4E1D2; /* Warm peachy beige */
+            padding: 2rem;
+            border-radius: 12px;
+            max-width: 600px;
+            margin: auto;
+        }
+        .highlight-text {
+            color: #D19E9E; /* Muted rose */
         }
     </style>
 </head>
-<body class="bg-cover bg-center bg-fixed text-white text-center" style="background-image: url('/Fantinus-wedding/assets/bg.jpg');">
-    <div class="py-20 text-[50px] text-gold drop-shadow-lg font-[Great Vibes]">
+<body class="text-center">
+    <div class="py-20 text-[60px] gold-text font-[Great Vibes] drop-shadow-lg">
         <h1>Fantinus & Delyn</h1>
-        <p class="text-xl">24.05.2025</p>
+        <p class="text-2xl">24.05.2025</p>
     </div>
 
-    <div class="bg-black/50 text-lg font-bold px-6 py-4 rounded-lg inline-block">
+    <div class="accent-bg text-lg font-bold shadow-md border-2 border-gold">
         <p>We can't wait to celebrate with you!</p>
-        <p id="timer"></p>
+        <p id="timer" class="highlight-text"></p>
     </div>
 
-    <div class="max-w-xl bg-white/90 p-8 rounded-xl shadow-xl border-4 border-gold text-gray-900 mx-auto mt-8">
-        <h2 class="text-2xl text-pink-600 font-semibold">You Are Invited</h2>
-        <p class="text-lg">Join us in celebrating our wedding</p>
-        
-        <div class="mt-4 text-lg font-semibold text-pink-600">
+    <div class="max-w-3xl bg-white p-12 rounded-xl shadow-lg border-4 border-gold text-gray-900 mx-auto mt-16 text-center">
+        <h2 class="text-4xl highlight-text font-semibold">You Are Invited</h2>
+        <p class="text-lg mt-4">Join us in celebrating our wedding</p>
+        <div class="mt-6 text-lg font-semibold highlight-text space-y-3">
             <p>💒 Holy Matrimony - St. Joseph Cathedral</p>
             <p>⏰ 8:00 AM - 9:00 AM</p>
             <p>🎉 Wedding Reception - Grand Riverine Ballroom 1</p>
             <p>⏳ Guest Arrival: 6:00 PM | Dinner Begins: 7:00 PM</p>
         </div>
-
-        <div class="mt-6 text-lg font-semibold text-pink-600">
-            <p>Dress in these colors to celebrate with us!</p>
-        </div>
-
-        <div class="mt-6">
-            <h2 class="text-xl font-bold">📍 Find Us Here</h2>
-            <a href="https://waze.com/ul?ll=3.1502,101.7106&navigate=yes" target="_blank" class="block bg-blue-600 text-white py-3 px-5 rounded-lg mt-4">Open in Waze</a>
-            <a href="https://maps.google.com/?q=St.+Joseph+Cathedral" target="_blank" class="block bg-green-600 text-white py-3 px-5 rounded-lg mt-2">Open in Google Maps</a>
-        </div>
     </div>
 
-    <div class="max-w-xl bg-white/90 p-8 rounded-xl shadow-xl border-4 border-gold text-gray-900 mx-auto mt-8">
-        <h2 class="text-2xl text-pink-600 font-semibold">💌 RSVP Now</h2>
-        <p class="text-lg">Let us know if you’ll be attending!</p>
-        <form id="rsvpForm" class="flex flex-col gap-4 mt-4">
-            <input type="text" name="Name" placeholder="Your Name" required class="p-3 rounded-lg border-2 border-gold">
-            <input type="email" name="Email" placeholder="Your Email" required class="p-3 rounded-lg border-2 border-gold">
-            <input type="tel" name="Phone" placeholder="Your Phone (Optional)" class="p-3 rounded-lg border-2 border-gold">
-            <input type="number" name="Pax" placeholder="Number of Guests" min="1" required class="p-3 rounded-lg border-2 border-gold">
-            <select name="Attendance" required class="p-3 rounded-lg border-2 border-gold">
+    <div class="max-w-3xl bg-white p-12 rounded-xl shadow-lg border-4 border-gold text-gray-900 mx-auto mt-16 text-center">
+        <h2 class="text-4xl highlight-text font-semibold">💌 RSVP Now</h2>
+        <p class="text-lg mt-4">Let us know if you’ll be attending!</p>
+        <form id="rsvpForm" class="flex flex-col gap-6 mt-6">
+            <input type="text" name="Name" placeholder="Your Name" required class="p-4 rounded-lg border-2 border-gold">
+            <input type="email" name="Email" placeholder="Your Email" required class="p-4 rounded-lg border-2 border-gold">
+            <input type="tel" name="Phone" placeholder="Your Phone (Optional)" class="p-4 rounded-lg border-2 border-gold">
+            <input type="number" name="Pax" placeholder="Number of Guests" min="1" required class="p-4 rounded-lg border-2 border-gold">
+            <select name="Attendance" required class="p-4 rounded-lg border-2 border-gold">
                 <option value="" disabled selected>Will you be attending?</option>
                 <option value="Yes">Yes, I’ll be there!</option>
                 <option value="No">Sorry, I can't make it</option>
             </select>
-            <textarea name="Message" placeholder="Leave a message (Optional)" class="p-3 rounded-lg border-2 border-gold"></textarea>
-            <button type="submit" class="bg-pink-600 text-white py-3 px-5 rounded-lg font-bold hover:bg-pink-700">Submit RSVP</button>
+            <textarea name="Message" placeholder="Leave a message (Optional)" class="p-4 rounded-lg border-2 border-gold"></textarea>
+            <button type="submit" class="bg-pink-600 text-white py-4 px-6 rounded-lg font-bold hover:bg-pink-700">Submit RSVP</button>
         </form>
-        <p class="hidden text-lg font-bold text-pink-600 mt-4" id="thank-you">Thank you for your RSVP! 💖</p>
+        <p class="hidden text-lg font-bold highlight-text mt-6" id="thank-you">Thank you for your RSVP! 💖</p>
     </div>
-
-    <audio controls autoplay loop class="mt-8">
-        <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
-        Your browser does not support audio.
-    </audio>
 
     <script>
         document.getElementById("rsvpForm").addEventListener("submit", function(event) {
