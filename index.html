@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -117,6 +117,25 @@
             <a href="https://waze.com/ul?ll=3.1502,101.7106&navigate=yes" target="_blank" class="waze">Open in Waze</a>
             <a href="https://maps.google.com/?q=St.+Joseph+Cathedral" target="_blank" class="google-maps">Open in Google Maps</a>
         </div>
+    </div>
+
+    <div class="container">
+        <h2>RSVP Now</h2>
+        <p>Let us know if you’ll be attending!</p>
+        <form id="rsvpForm">
+            <input type="text" name="Name" id="name" placeholder="Your Name" required>
+            <input type="email" name="Email" id="email" placeholder="Your Email" required>
+            <input type="tel" name="Phone" id="phone" placeholder="Your Phone (Optional)">
+            <input type="number" name="Pax" id="guests" placeholder="Number of Guests" min="1" required>
+            <select id="attending" name="Attendance" required>
+                <option value="" disabled selected>Will you be attending?</option>
+                <option value="Yes">Yes, I’ll be there!</option>
+                <option value="No">Sorry, I can't make it</option>
+            </select>
+            <textarea id="message" name="Message" placeholder="Leave a message (Optional)"></textarea>
+            <button type="submit">Submit RSVP</button>
+        </form>
+        <p class="thank-you">Thank you for your RSVP! 💖</p>
     </div>
 
     <audio controls autoplay loop>
