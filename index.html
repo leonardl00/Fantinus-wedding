@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wedding Invitation</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/countdown/2.6.0/countdown.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
@@ -12,6 +13,7 @@
             font-family: 'Poppins', sans-serif;
             color: #4A4A4A;
             overflow-x: hidden;
+            background-color: #F4E1D2; /* Warm peachy beige */
         }
         #cover {
             background: url('/Fantinus-wedding/assets/bg.jpg') no-repeat center center;
@@ -22,31 +24,46 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            text-align: center;
+            padding: 2rem;
         }
         
         @media (max-width: 768px) {
             #cover {
                 background: url('/Fantinus-wedding/assets/bg-vertical.jpg') no-repeat center center;
                 background-size: cover;
+                height: auto;
+                padding: 4rem 2rem;
             }
+        }
+
+        .content-section {
+            max-width: 90%;
+            width: 600px;
+            background: #E8C6C6; /* Soft pastel pink */
+            padding: 2rem;
+            margin: 2rem auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border: 2px solid #D19E9E; /* Muted rose */
         }
     </style>
 </head>
 <body class="text-center">
     <div id="cover">
-        <div class="py-20 text-[60px] gold-text font-[Great Vibes] drop-shadow-lg">
+        <div class="py-10 text-[50px] md:text-[60px] gold-text font-[Great Vibes] drop-shadow-lg">
             <h1>Fantinus & Delyn</h1>
-            <p class="text-2xl">24.05.2025</p>
+            <p class="text-lg md:text-2xl">24.05.2025</p>
         </div>
     </div>
 
-    <div class="accent-bg text-lg font-bold shadow-md border-2 border-gold">
+    <div class="content-section text-lg font-bold">
         <p>We can't wait to celebrate with you!</p>
-        <p id="timer" class="highlight-text"></p>
+        <p id="timer" class="highlight-text text-xl font-semibold"></p>
     </div>
 
-    <div class="max-w-3xl bg-white p-12 rounded-xl shadow-lg border-4 border-gold text-gray-900 mx-auto mt-16 text-center">
-        <h2 class="text-4xl highlight-text font-semibold">You Are Invited</h2>
+    <div class="content-section text-gray-900 text-center">
+        <h2 class="text-3xl md:text-4xl highlight-text font-semibold">You Are Invited</h2>
         <p class="text-lg mt-4">Join us in celebrating our wedding</p>
         <div class="mt-6 text-lg font-semibold highlight-text space-y-3">
             <p>💒 Holy Matrimony - St. Joseph Cathedral</p>
@@ -56,23 +73,23 @@
         </div>
     </div>
 
-    <div class="max-w-3xl bg-white p-12 rounded-xl shadow-lg border-4 border-gold text-gray-900 mx-auto mt-16 text-center">
-        <h2 class="text-4xl highlight-text font-semibold">💌 RSVP Now</h2>
+    <div class="content-section text-gray-900 text-center">
+        <h2 class="text-3xl md:text-4xl highlight-text font-semibold">💌 RSVP Now</h2>
         <p class="text-lg mt-4">Let us know if you’ll be attending!</p>
-        <form id="rsvpForm" class="flex flex-col gap-6 mt-6">
-            <input type="text" name="Name" placeholder="Your Name" required class="p-4 rounded-lg border-2 border-gold">
-            <input type="email" name="Email" placeholder="Your Email" required class="p-4 rounded-lg border-2 border-gold">
-            <input type="tel" name="Phone" placeholder="Your Phone (Optional)" class="p-4 rounded-lg border-2 border-gold">
-            <input type="number" name="Pax" placeholder="Number of Guests" min="1" required class="p-4 rounded-lg border-2 border-gold">
-            <select name="Attendance" required class="p-4 rounded-lg border-2 border-gold">
+        <form id="rsvpForm" class="flex flex-col gap-4 mt-6">
+            <input type="text" name="Name" placeholder="Your Name" required class="p-3 rounded-lg border border-gray-300">
+            <input type="email" name="Email" placeholder="Your Email" required class="p-3 rounded-lg border border-gray-300">
+            <input type="tel" name="Phone" placeholder="Your Phone (Optional)" class="p-3 rounded-lg border border-gray-300">
+            <input type="number" name="Pax" placeholder="Number of Guests" min="1" required class="p-3 rounded-lg border border-gray-300">
+            <select name="Attendance" required class="p-3 rounded-lg border border-gray-300">
                 <option value="" disabled selected>Will you be attending?</option>
                 <option value="Yes">Yes, I’ll be there!</option>
                 <option value="No">Sorry, I can't make it</option>
             </select>
-            <textarea name="Message" placeholder="Leave a message (Optional)" class="p-4 rounded-lg border-2 border-gold"></textarea>
-            <button type="submit" class="bg-pink-600 text-white py-4 px-6 rounded-lg font-bold hover:bg-pink-700">Submit RSVP</button>
+            <textarea name="Message" placeholder="Leave a message (Optional)" class="p-3 rounded-lg border border-gray-300"></textarea>
+            <button type="submit" class="bg-pink-600 text-white py-3 px-5 rounded-lg font-bold hover:bg-pink-700">Submit RSVP</button>
         </form>
-        <p class="hidden text-lg font-bold highlight-text mt-6" id="thank-you">Thank you for your RSVP! 💖</p>
+        <p class="hidden text-lg font-bold highlight-text mt-4" id="thank-you">Thank you for your RSVP! 💖</p>
     </div>
 
     <script>
@@ -93,17 +110,22 @@
             })
             .catch(error => console.error("Error:", error));
         });
-
-        function countdown() {
-            const weddingDate = new Date("May 24, 2025 00:00:00").getTime();
-            setInterval(() => {
-                const now = new Date().getTime();
-                const timeLeft = weddingDate - now;
-                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-                document.getElementById("timer").innerHTML = days + " days to go!";
-            }, 1000);
+        
+        function updateCountdown() {
+            const weddingDate = new Date("May 24, 2025 00:00:00");
+            const timerElement = document.getElementById("timer");
+            
+            function renderCountdown() {
+                const now = new Date();
+                const timeLeft = countdown(weddingDate, now, countdown.DAYS | countdown.HOURS | countdown.MINUTES | countdown.SECONDS).toString();
+                timerElement.innerHTML = `<strong>${timeLeft}</strong>`;
+            }
+            
+            renderCountdown();
+            setInterval(renderCountdown, 1000);
         }
-        countdown();
+        
+        updateCountdown();
     </script>
 </body>
 </html>
