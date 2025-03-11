@@ -148,20 +148,20 @@
     <script>
         document.getElementById("rsvpForm").addEventListener("submit", function(event) {
             event.preventDefault();
-            
-            const formData = new FormData(this);
-            const scriptURL = "https://script.google.com/macros/s/AKfycbzMs3Ee_rOZckKuKDhvUCLPtyV4-r_qekngqz6Mr7xGkiiQesHDuRcrknldz1HHurBh/exec";
-            
-            fetch(scriptURL, { method: "POST", body: formData })
-                .then(response => {
-                    if (response.ok) {
-                        document.querySelector(".thank-you").style.display = "block";
-                        document.getElementById("rsvpForm").reset();
-                    } else {
-                        alert("Something went wrong. Please try again.");
-                    }
-                })
-                .catch(error => alert("Error: " + error.message));
+            const form = event.target;
+            const formData = new FormData(form);
+            fetch("https://script.google.com/macros/s/AKfycbzMs3Ee_rOZckKuKDhvUCLPtyV4-r_qekngqz6Mr7xGkiiQesHDuRcrknldz1HHurBh/exec", {
+                method: "POST",
+                body: formData,
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.result === "success") {
+                    document.querySelector(".thank-you").style.display = "block";
+                    form.reset();
+                }
+            })
+            .catch(error => console.error("Error:", error));
         });
 
         function countdown() {
