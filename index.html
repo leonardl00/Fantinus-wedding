@@ -20,12 +20,23 @@
             background-size: cover;
             width: 100%;
             height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
             padding: 2rem;
+            position: relative;
+        }
+        
+        #cover::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to bottom, rgba(244, 225, 210, 0) 0%, #F4E1D2 100%);
         }
         
         @media (max-width: 768px) {
@@ -92,41 +103,5 @@
         </form>
         <p class="hidden text-lg font-bold highlight-text mt-4" id="thank-you">Thank you for your RSVP! 💖</p>
     </div>
-
-    <script>
-        document.getElementById("rsvpForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            const form = event.target;
-            const formData = new FormData(form);
-            fetch("https://script.google.com/macros/s/AKfycbzMs3Ee_rOZckKuKDhvUCLPtyV4-r_qekngqz6Mr7xGkiiQesHDuRcrknldz1HHurBh/exec", {
-                method: "POST",
-                body: formData,
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.result === "success") {
-                    document.getElementById("thank-you").classList.remove("hidden");
-                    form.reset();
-                }
-            })
-            .catch(error => console.error("Error:", error));
-        });
-        
-        function updateCountdown() {
-            const weddingDate = new Date("May 24, 2025 00:00:00");
-            const timerElement = document.getElementById("timer");
-            
-            function renderCountdown() {
-                const now = new Date();
-                const timeLeft = countdown(weddingDate, now, countdown.DAYS | countdown.HOURS | countdown.MINUTES | countdown.SECONDS).toString();
-                timerElement.innerHTML = `<strong>${timeLeft}</strong>`;
-            }
-            
-            renderCountdown();
-            setInterval(renderCountdown, 1000);
-        }
-        
-        updateCountdown();
-    </script>
 </body>
 </html>
