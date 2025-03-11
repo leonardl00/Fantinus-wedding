@@ -63,9 +63,12 @@
 </head>
 <body class="text-center">
     <div id="cover">
-        <div class="py-10 text-[50px] md:text-[60px] gold-text font-[Great Vibes] drop-shadow-lg">
-            <h1>Fantinus & Delyn</h1>
-            <p class="text-lg md:text-2xl">24.05.2025</p>
+        <div class="bg-white/70 p-10 rounded-3xl shadow-xl max-w-lg mx-auto">
+            <p class="text-xl md:text-2xl text-gray-700 font-semibold italic">"A journey of love begins..."</p>
+            <h1 class="py-6 text-[60px] md:text-[80px] gold-text font-[Great Vibes] drop-shadow-lg text-pink-700">Fantinus & Delyn</h1>
+            <p class="text-2xl md:text-4xl font-bold text-gray-900 tracking-wide">Saturday, May 24, 2025</p>
+            <p class="text-lg md:text-2xl text-gray-700 font-medium mt-2">Grand Riverine Ballroom 1</p>
+            <div class="mt-6 text-pink-700 font-bold text-lg md:text-xl animate-bounce">We can't wait to celebrate with you! 💖</div>
         </div>
     </div>
 
@@ -78,8 +81,6 @@
         <h2 class="text-3xl md:text-4xl highlight-text font-semibold">You Are Invited</h2>
         <p class="text-lg mt-4">Join us in celebrating our wedding</p>
         <div class="mt-6 text-lg font-semibold highlight-text space-y-3">
-            <p>💒 Holy Matrimony - St. Joseph Cathedral</p>
-            <p>⏰ 8:00 AM - 9:00 AM</p>
             <p>🎉 Wedding Reception - Grand Riverine Ballroom 1</p>
             <p>⏳ Guest Arrival: 6:00 PM | Dinner Begins: 7:00 PM</p>
         </div>
@@ -103,5 +104,40 @@
         </form>
         <p class="hidden text-lg font-bold highlight-text mt-4" id="thank-you">Thank you for your RSVP! 💖</p>
     </div>
+    <script>
+          document.getElementById("rsvpForm").addEventListener("submit", function(event) {
+              event.preventDefault();
+              const form = event.target;
+              const formData = new FormData(form);
+              fetch("https://script.google.com/macros/s/AKfycbzMs3Ee_rOZckKuKDhvUCLPtyV4-r_qekngqz6Mr7xGkiiQesHDuRcrknldz1HHurBh/exec", {
+                  method: "POST",
+                  body: formData,
+              })
+              .then(response => response.json())
+              .then(data => {
+                  if (data.result === "success") {
+                      document.getElementById("thank-you").classList.remove("hidden");
+                      form.reset();
+                  }
+              })
+              .catch(error => console.error("Error:", error));
+          });
+          
+          function updateCountdown() {
+              const weddingDate = new Date("May 24, 2025 00:00:00");
+              const timerElement = document.getElementById("timer");
+              
+              function renderCountdown() {
+                  const now = new Date();
+                  const timeLeft = countdown(weddingDate, now, countdown.DAYS | countdown.HOURS | countdown.MINUTES | countdown.SECONDS).toString();
+                  timerElement.innerHTML = `<strong>${timeLeft}</strong>`;
+              }
+              
+              renderCountdown();
+              setInterval(renderCountdown, 1000);
+          }
+          
+          updateCountdown();
+      </script>
 </body>
 </html>
