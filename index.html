@@ -11,63 +11,60 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background: url(/Fantinus-wedding/assets/bg.jpg);
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
+            background: url('/Fantinus-wedding/assets/bg.jpg') no-repeat center center fixed;
             background-size: cover;
             text-align: center;
+            color: #fff;
         }
         .header {
-            color: #b86e7a;
-            padding: 60px 20px;
+            padding: 80px 20px;
             font-family: 'Great Vibes', cursive;
-            font-size: 42px;
+            font-size: 50px;
+            color: #d4af37;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
         }
         .countdown {
-            font-size: 22px;
-            margin: 20px 0;
+            font-size: 24px;
             font-weight: bold;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 8px;
+            display: inline-block;
         }
         .container {
-            max-width: 600px;
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            margin: 20px auto;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            border: 3px solid #d4af37;
+            max-width: 650px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 35px;
+            border-radius: 15px;
+            margin: 30px auto;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            border: 4px solid #d4af37;
+            color: #333;
         }
         h2 {
             color: #b76e79;
-            font-size: 28px;
+            font-size: 30px;
+            font-weight: 600;
         }
         p {
-            color: #444;
             font-size: 18px;
+            margin-bottom: 10px;
         }
         .event-details {
-            margin: 20px 0;
             font-size: 20px;
             font-weight: 600;
             color: #b76e79;
-        }
-        .guest-info {
-            font-size: 16px;
-            color: #333;
-            margin-bottom: 10px;
-        }
-        .location {
-            margin: 20px 0;
+            margin-top: 15px;
         }
         .location a {
             display: block;
-            margin: 10px auto;
+            margin: 12px auto;
             text-decoration: none;
-            padding: 12px;
+            padding: 14px;
             color: white;
-            border-radius: 6px;
+            border-radius: 8px;
             font-weight: bold;
+            transition: all 0.3s ease-in-out;
         }
         .waze {
             background: #1A73E8;
@@ -75,11 +72,45 @@
         .google-maps {
             background: #34A853;
         }
+        .location a:hover {
+            opacity: 0.8;
+        }
         .attire {
-            margin: 20px 0;
             font-size: 18px;
             font-weight: 600;
             color: #b76e79;
+            margin-top: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 2px solid #d4af37;
+            font-size: 16px;
+        }
+        button {
+            background: #b76e79;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #a35568;
+        }
+        .thank-you {
+            font-size: 18px;
+            font-weight: bold;
+            color: #b76e79;
+            display: none;
+        }
+        audio {
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -99,16 +130,10 @@
         <p>Join us in celebrating our wedding</p>
         
         <div class="event-details">
-            <p>Holy Matrimony - St. Joseph Cathedral</p>
-            <p>8:00 AM - 9:00 AM</p>
-            <p>Wedding Reception - Grand Riverine Ballroom 1</p>
-            <p>Guest Arrival: 6:00 PM | Dinner Begins: 7:00 PM</p>
-        </div>
-        
-        <div class="guest-info">
-            <p>Hosted by:</p>
-            <p>Mr. Peter Nise & Mrs. Victoria Sinau</p>
-            <p>Mrs. Limem Rijen</p>
+            <p>💒 Holy Matrimony - St. Joseph Cathedral</p>
+            <p>⏰ 8:00 AM - 9:00 AM</p>
+            <p>🎉 Wedding Reception - Grand Riverine Ballroom 1</p>
+            <p>⏳ Guest Arrival: 6:00 PM | Dinner Begins: 7:00 PM</p>
         </div>
         
         <div class="attire">
@@ -116,14 +141,14 @@
         </div>
 
         <div class="location">
-            <h2>Find Us Here</h2>
+            <h2>📍 Find Us Here</h2>
             <a href="https://waze.com/ul?ll=3.1502,101.7106&navigate=yes" target="_blank" class="waze">Open in Waze</a>
             <a href="https://maps.google.com/?q=St.+Joseph+Cathedral" target="_blank" class="google-maps">Open in Google Maps</a>
         </div>
     </div>
 
     <div class="container">
-        <h2>RSVP Now</h2>
+        <h2>💌 RSVP Now</h2>
         <p>Let us know if you’ll be attending!</p>
         <form id="rsvpForm">
             <input type="text" name="Name" id="name" placeholder="Your Name" required>
