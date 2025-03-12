@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/countdown/2.6.0/countdown.min.js"></script>
     <script src="https://kit.fontawesome.com/a14a6760a1.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
@@ -72,24 +73,24 @@
             <p class="text-xl md:text-2xl text-gray-700 font-[Great Vibes] italic">"A journey of love begins..."</p>
             <h1 class="py-6 text-[40px] md:text-[60px] gold-text font-[Great Vibes] drop-shadow-lg text-pink-700">Fantinus
                 <br>
-                  <span class="text-6xl align-middle">&</span>
-                <br>
-                Delyn
-              </h1>
-            <div class="flex items-center justify-center text-center text-rose-700 font-serif">
-              <span class="border-t border-b border-rose-700 px-4 tracking-widest text-xs md:text-md text-nowrap">SATURDAY</span>
-              <span class="text-6xl font-bold px-6 text-rose-800">24</span>
-              <span class="border-t border-b border-rose-700 px-4 tracking-widest text-xs md:text-md text-nowrap">MAY 2025</span>
-          </div>
+                    <span class="text-6xl align-middle">&</span>
+                    <br>
+                    Delyn
+                </h1>
+                <div class="flex items-center justify-center text-center text-rose-700 font-serif">
+                <span class="border-t border-b border-rose-700 px-4 tracking-widest text-xs md:text-md text-nowrap">SATURDAY</span>
+                <span class="text-6xl font-bold px-6 text-rose-800">24</span>
+                <span class="border-t border-b border-rose-700 px-4 tracking-widest text-xs md:text-md text-nowrap">MAY 2025</span>
+            </div>
             <p class="text-lg md:text-2xl text-gray-700 font-medium mt-2">Grand Riverine Ballroom</p>
         </div>
     </div>
-  
+
     <div class="bible-quote-section text-gray-900 text-center">
         <p class="text-lg italic mt-4">"So they are no longer two, but one flesh. Therefore what God has joined together, let no one separate." - Matthew 19:6</p>
     </div>
 
-  <div class="content-section text-gray-900 text-center">
+    <div class="content-section text-gray-900 text-center">
         <div class="text-lg font-semibold">
             <p>Mr. Peter Nise & Mrs. Victoria Sinau</p>
             <span>together with</span>
@@ -112,6 +113,14 @@
         <h2 class="text-3xl md:text-4xl highlight-text">Venue</h2>
         <p class="text-lg mt-4">Grand Riverine Ballroom</p>
         <span>Jalan Petanak, 93100 Kuching, Sarawak</span>
+        <iframe 
+                width="100%" 
+                height="300" 
+                frameborder="0" 
+                style="border:0" 
+                src="https://www.openstreetmap.org/export/embed.html?bbox=101.6869%2C3.1390%2C101.6869%2C3.1390&layer=mapnik&marker=3.1390%2C101.6869" 
+                allowfullscreen>
+        </iframe>
         <div class="flex justify-center gap-4 mt-4">
             <a href="https://waze.com/ul?ll=1.5523,110.3638&navigate=yes" target="_blank" class="text-blue-500 flex items-center gap-2">
                 <i class="fab fa-waze text-xl"></i> Waze
@@ -120,6 +129,16 @@
                 <i class="fa-solid fa-map-location-dot"></i> Google Maps
             </a>
         </div>
+    </div>
+
+    <div class="content-section mt-10">
+        <h2 class="text-3xl md:text-4xl highlight-text font-semibold">📍 Venue</h2>
+        <p class="text-lg">Join us at our wedding venue</p>
+        <iframe 
+            class="w-full h-64 md:h-96 rounded-xl mt-4 shadow-lg"
+            src="https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=Your+Wedding+Venue" 
+            allowfullscreen>
+        </iframe>
     </div>
 
     <div class="content-section">
@@ -166,6 +185,18 @@
     </div>
 
     <script>
+        $(document).ready(function(){
+            $('.carousel').slick({
+                dots: true,
+                infinite: true,
+                speed: 500,
+                slidesToShow: 1,
+                adaptiveHeight: true,
+                autoplay: true,
+                autoplaySpeed: 3000
+            });
+        });
+
         document.getElementById("rsvpForm").addEventListener("submit", function(event) {
             event.preventDefault();
             const form = event.target;
@@ -199,18 +230,6 @@
         }
         
         updateCountdown();
-
-        $(document).ready(function(){
-            $('.carousel').slick({
-                dots: true,
-                infinite: true,
-                speed: 500,
-                slidesToShow: 1,
-                adaptiveHeight: true,
-                autoplay: true,
-                autoplaySpeed: 3000
-            });
-        });
     </script>
 </body>
 </html>
