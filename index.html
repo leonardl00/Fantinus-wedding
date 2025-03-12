@@ -7,6 +7,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/countdown/2.6.0/countdown.min.js"></script>
     <script src="https://kit.fontawesome.com/a14a6760a1.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -119,19 +122,28 @@
         </div>
     </div>
 
-    <div class="content-section text-gray-900 text-center">
-        <h2 class="text-3xl md:text-4xl highlight-text font-semibold">You Are Invited</h2>
-        <p class="text-lg mt-4">Join us in celebrating our wedding</p>
-        <div class="mt-6 text-lg font-semibold highlight-text space-y-3">
-            <p>🎉 Wedding Reception - Grand Riverine Ballroom 1</p>
-            <p>⏳ Guest Arrival: 6:00 PM | Dinner Begins: 7:00 PM</p>
+    <div class="content-section">
+        <h2 class="text-3xl md:text-4xl highlight-text font-semibold">💖 Our Moments</h2>
+        <div class="carousel slider">
+            <div><img src="/Fantinus-wedding/assets/IMG1-min.jpeg" class="rounded-xl shadow-lg" alt="Wedding Photo 1"></div>
+            <div><img src="/Fantinus-wedding/assets/IMG2-min.jpeg" class="rounded-xl shadow-lg" alt="Wedding Photo 2"></div>
+            <div><img src="/Fantinus-wedding/assets/IMG3-min.jpeg" class="rounded-xl shadow-lg" alt="Wedding Photo 3"></div>
+            <div><img src="/Fantinus-wedding/assets/IMG4-min.jpeg" class="rounded-xl shadow-lg" alt="Wedding Photo 4"></div>
+            <div><img src="/Fantinus-wedding/assets/IMG5-min.jpeg" class="rounded-xl shadow-lg" alt="Wedding Photo 5"></div>
         </div>
     </div>
 
     <div class="content-section text-lg font-bold">
-        <h2 class="text-3xl md:text-4xl highlight-text font-semibold">Countdown</h2>
+        <h2 class="text-3xl md:text-4xl highlight-text font-semibold">Counting Days</h2>
         <p>We can't wait to celebrate with you!</p>
         <p id="timer" class="highlight-text text-xl font-semibold"></p>
+    </div>
+
+    <div class="content-section text-gray-900 text-center">
+        <h2 class="text-3xl md:text-4xl highlight-text font-semibold">📞 Contact Information</h2>
+        <p class="text-lg mt-2">For any inquiries, please contact:</p>
+        <p class="text-lg font-semibold">Fantinus: <a href="tel:+60123456789" class="text-blue-600">+60 12-345 6789</a></p>
+        <p class="text-lg font-semibold">Delyn: <a href="tel:+60198765432" class="text-blue-600">+60 19-876 5432</a></p>
     </div>
 
     <div class="content-section text-gray-900 text-center">
@@ -154,39 +166,51 @@
     </div>
 
     <script>
-          document.getElementById("rsvpForm").addEventListener("submit", function(event) {
-              event.preventDefault();
-              const form = event.target;
-              const formData = new FormData(form);
-              fetch("https://script.google.com/macros/s/AKfycbzMs3Ee_rOZckKuKDhvUCLPtyV4-r_qekngqz6Mr7xGkiiQesHDuRcrknldz1HHurBh/exec", {
-                  method: "POST",
-                  body: formData,
-              })
-              .then(response => response.json())
-              .then(data => {
-                  if (data.result === "success") {
-                      document.getElementById("thank-you").classList.remove("hidden");
-                      form.reset();
-                  }
-              })
-              .catch(error => console.error("Error:", error));
-          });
-          
-          function updateCountdown() {
-              const weddingDate = new Date("May 24, 2025 00:00:00");
-              const timerElement = document.getElementById("timer");
-              
-              function renderCountdown() {
-                  const now = new Date();
-                  const timeLeft = countdown(weddingDate, now, countdown.DAYS | countdown.HOURS | countdown.MINUTES | countdown.SECONDS).toString();
-                  timerElement.innerHTML = `<strong>${timeLeft}</strong>`;
-              }
-              
-              renderCountdown();
-              setInterval(renderCountdown, 1000);
-          }
-          
-          updateCountdown();
-      </script>
+        document.getElementById("rsvpForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            fetch("https://script.google.com/macros/s/AKfycbzMs3Ee_rOZckKuKDhvUCLPtyV4-r_qekngqz6Mr7xGkiiQesHDuRcrknldz1HHurBh/exec", {
+                method: "POST",
+                body: formData,
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.result === "success") {
+                    document.getElementById("thank-you").classList.remove("hidden");
+                    form.reset();
+                }
+            })
+            .catch(error => console.error("Error:", error));
+        });
+        
+        function updateCountdown() {
+            const weddingDate = new Date("May 24, 2025 00:00:00");
+            const timerElement = document.getElementById("timer");
+            
+            function renderCountdown() {
+                const now = new Date();
+                const timeLeft = countdown(weddingDate, now, countdown.DAYS | countdown.HOURS | countdown.MINUTES | countdown.SECONDS).toString();
+                timerElement.innerHTML = `<strong>${timeLeft}</strong>`;
+            }
+            
+            renderCountdown();
+            setInterval(renderCountdown, 1000);
+        }
+        
+        updateCountdown();
+
+        $(document).ready(function(){
+            $('.carousel').slick({
+                dots: true,
+                infinite: true,
+                speed: 500,
+                slidesToShow: 1,
+                adaptiveHeight: true,
+                autoplay: true,
+                autoplaySpeed: 3000
+            });
+        });
+    </script>
 </body>
 </html>
