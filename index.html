@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wedding Invitation</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/countdown/2.6.0/countdown.min.js"></script>
     <script src="https://kit.fontawesome.com/a14a6760a1.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simplycountdown.js@3.0.1/dist/simplyCountdown.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/forms@0.5.10/src/index.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@preline/input-number@3.0.0/index.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/simplycountdown.js@3.0.1/dist/themes/default.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +24,7 @@
             background-color: #F4E1D2;
         }
         #cover {
-            background: url('/Fantinus-wedding/assets/bg.jpg') no-repeat center center;
+            background: url('/assets/bg.jpg') no-repeat center center;
             background-size: cover;
             width: 100%;
             height: 100vh;
@@ -46,7 +49,7 @@
         
         @media (max-width: 768px) {
             #cover {
-                background: url('/Fantinus-wedding/assets/bg-vertical.jpg') no-repeat center center;
+                background: url('/assets/bg-vertical.jpg') no-repeat center center;
                 background-size: cover;
                 height: 100vh;
                 min-height: 100vh;
@@ -57,9 +60,10 @@
         .content-section {
             max-width: 90%;
             width: 600px;
-            padding: 2rem;
-            margin: 2rem auto;
+            padding: 1rem 2rem;
+            margin: 1rem auto;
         }
+
         .white-section {
             background-color: white;
             padding: 2rem;
@@ -91,93 +95,188 @@
     </div>
 
     <div class="content-section text-gray-900 text-center">
-        <div class="text-lg font-semibold">
-            <p>Mr. Peter Nise & Mrs. Victoria Sinau</p>
-            <span>together with</span>
-            <p>Mrs. Limen Rijen</p>
-        </div>
-        <div class="text-xl font-semibold mt-4">
+        <p class="md:text-3xl text-xl font-bold mb-2">Mr. Peter Nise & Mrs. Victoria Sinau</p>
+        <span class="text-md italic">together with</span>
+        <p class="md:text-3xl text-xl font-bold mt-2">Mrs. Limen Rijen</p>
+    </div>
+
+    <div class="content-section text-gray-900 text-center">
+        <div class="text-xl">
             <p>joyfully invite you to celebrate the marriage of their children</p>
         </div>
-        <div class="text-3xl md:text-4xl highlight-text font-bold mt-4">
+    </div>
+    
+    <div class="content-section text-gray-900 text-center">
+        <div class="text-4xl md:text-4xl highlight-text font-bold">
             <p>Fantinus & Delyn</p>
         </div>
     </div>
 
     <div class="content-section text-gray-900 text-center">
-        <h2 class="text-3xl md:text-4xl highlight-text">Date</h2>
-        <p class="text-lg mt-4">Saturday, 24 May 2025</p>
+        <div class="mx-auto w-80 h-80 overflow-hidden rounded-xl shadow-lg">
+            <img src="/assets/IMG2-min.jpeg" alt="Profile" class="w-full h-full object-cover">
+        </div>
     </div>
 
     <div class="content-section text-gray-900 text-center">
-        <h2 class="text-3xl md:text-4xl highlight-text">Venue</h2>
-        <p class="text-lg mt-4">Grand Riverine Ballroom</p>
-        <span>Jalan Petanak, 93100 Kuching, Sarawak</span>
-        <div class="relative w-full" style="padding-top: 56.25%;">
+        <h2 class="text-2xl md:text-3xl">~ Date ~</h2>
+        <p class="text-2xl font-semibold mt-4">Saturday, 24th May 2025</p>
+    </div>
+
+    <div class="content-section text-gray-900 text-center">
+        <h2 class="text-2xl md:text-3xl">~ Venue ~</h2>
+        <p class="text-xl font-semibold my-4">Grand Riverine Ballroom</p>
+        <span>Jalan Petanak, <br>93100 Kuching, Sarawak</span>
+        <!-- <div class="relative w-full m-4" style="padding-top: 56.25%;">
             <iframe class="absolute top-0 left-0 w-full h-full" 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31906.837651195943!2d110.35048222398984!3d1.5519853466663684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fba7758d18dcdf%3A0xd5719ddb5faa8309!2sGrand%20Riverine%20Ballroom!5e0!3m2!1sen!2smy!4v1741752147562!5m2!1sen!2smy" 
                 allowfullscreen="" loading="lazy" 
                 referrerpolicy="no-referrer-when-downgrade">
             </iframe>
-        </div>
-        <div class="flex justify-center gap-4 mt-4">
-            <a href="https://waze.com/ul?ll=1.5523,110.3638&navigate=yes" target="_blank" class="text-blue-500 flex items-center gap-2">
-                <i class="fab fa-waze text-xl"></i> Waze
+        </div> -->
+        <div class="flex justify-center gap-8 my-6">
+            <a href="https://waze.com/ul?ll=1.5523,110.3638&navigate=yes" target="_blank" class="flex flex-col items-center gap-1">
+                <i class="fab fa-waze text-3xl"></i>
+                <span>Waze</span>
             </a>
-            <a href="https://maps.google.com/?q=1.5523,110.3638" target="_blank" class="text-green-500 flex items-center gap-2">
-                <i class="fa-solid fa-map-location-dot"></i> Google Maps
+            <a href="https://maps.google.com/?q=1.5523,110.3638" target="_blank" class=" flex flex-col items-center gap-1">
+                <i class="fa-solid fa-map-location-dot text-3xl"></i>
+                <span>Google Maps</span>
             </a>
-        </div>
+        </div>        
     </div>
 
     <!-- Dress Code Section -->
-    <div class="content-section">
-        <h3 class="text-lg font-semibold">Dress Code</h3>
-        <div class="flex gap-2 mt-2 mx-auto w-fit bg-white p-2 rounded-md ">
+    <div class="white-section md:content-section">
+        <h2 class="text-2xl md:text-3xl">~ Dress Code ~</h2>
+        <div class="flex gap-2 mt-4 mx-auto w-fit">
             <span class="w-12 h-12 rounded-full" style="background-color: #FFDDED;"></span>
             <span class="w-12 h-12 rounded-full" style="background-color: #F3DEDD;"></span>
             <span class="w-12 h-12 rounded-full" style="background-color: #EBCECB;"></span>
             <span class="w-12 h-12 rounded-full" style="background-color: #D89C9C;"></span>
         </div>
-    </div>
 
-    <div class="content-section">
-        <h2 class="text-3xl md:text-4xl highlight-text font-semibold">💖 Our Moments</h2>
-        <div class="carousel slider">
-            <div><img src="/Fantinus-wedding/assets/IMG1-min.jpeg" class="rounded-xl shadow-lg" alt="Wedding Photo 1"></div>
-            <div><img src="/Fantinus-wedding/assets/IMG2-min.jpeg" class="rounded-xl shadow-lg" alt="Wedding Photo 2"></div>
-            <div><img src="/Fantinus-wedding/assets/IMG3-min.jpeg" class="rounded-xl shadow-lg" alt="Wedding Photo 3"></div>
-            <div><img src="/Fantinus-wedding/assets/IMG4-min.jpeg" class="rounded-xl shadow-lg" alt="Wedding Photo 4"></div>
-            <div><img src="/Fantinus-wedding/assets/IMG5-min.jpeg" class="rounded-xl shadow-lg" alt="Wedding Photo 5"></div>
+        <div class="content-section carousel slider">
+            <div><img src="/assets/IMG1.jpg" class="rounded-xl" alt="Wedding Photo 1"></div>
+            <!-- <div><img src="/assets/IMG2.jpg" class="rounded-xl" alt="Wedding Photo 2"></div> -->
+            <div><img src="/assets/IMG3.jpg" class="rounded-xl" alt="Wedding Photo 3"></div>
+            <div><img src="/assets/IMG4.jpg" class="rounded-xl" alt="Wedding Photo 4"></div>
+            <div><img src="/assets/IMG5.jpg" class="rounded-xl" alt="Wedding Photo 5"></div>
         </div>
+
+        <h2 class="text-2xl md:text-3xl">~ Counting Days ~</h2>
+        <div id="timer" class="simply-countdown p-2 mt-4"></div>
     </div>
 
-    <div class="content-section text-lg font-bold">
-        <h2 class="text-3xl md:text-4xl highlight-text font-semibold">Counting Days</h2>
-        <p>We can't wait to celebrate with you!</p>
-        <p id="timer" class="highlight-text text-xl font-semibold"></p>
-    </div>
-
-    <div class="content-section text-gray-900 text-center">
-        <h2 class="text-3xl md:text-4xl highlight-text font-semibold">📞 Contact Information</h2>
-        <p class="text-lg mt-2">For any inquiries, please contact:</p>
+    <div class="white-section text-gray-900 text-center">
+        <h2 class="text-2xl md:text-3xl">~ Contact ~</h2>
         <p class="text-lg font-semibold">Fantinus: <a href="tel:+60123456789" class="text-blue-600">+60 12-345 6789</a></p>
         <p class="text-lg font-semibold">Delyn: <a href="tel:+60198765432" class="text-blue-600">+60 19-876 5432</a></p>
     </div>
 
-    <div class="content-section text-gray-900 text-center">
-        <h2 class="text-3xl md:text-4xl highlight-text font-semibold">💌 RSVP Now</h2>
-        <p class="text-lg mt-4">Let us know if you’ll be attending!</p>
+    <div class="white-section text-gray-900 text-center">
+        <h2 class="text-2xl md:text-3xl">~ Contact ~</h2>
+    
+        <p class="text-2xl font-semibold mt-4">Fantinus</p>
+        <div class="flex justify-center gap-4 mt-4">
+            <a href="https://wa.me/60123456789" class="bg-[#F4E1D2] text-white p-4 rounded-full text-2xl inline-flex items-center justify-center w-12 h-12">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="tel:+60123456789" class="bg-[#F4E1D2] text-white p-4 rounded-full text-2xl inline-flex items-center justify-center w-12 h-12">
+                <i class="fas fa-phone"></i>
+            </a>
+        </div>
+    
+        <p class="text-2xl font-semibold mt-4">Delyn</p>
+        <div class="flex justify-center gap-4 mt-4">
+            <a href="https://wa.me/60198765432" class="bg-[#F4E1D2] text-white p-4 rounded-full text-2xl inline-flex items-center justify-center w-12 h-12">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="tel:+60198765432" class="bg-[#F4E1D2] text-white p-4 rounded-full text-2xl inline-flex items-center justify-center w-12 h-12">
+                <i class="fas fa-phone"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="content-section text-gray-900">
+        <h2 class="text-3xl md:text-4xl highlight-text font-semibold text-center">~ R.S.V.P ~</h2>
+        <p class="text-lg mt-4">Please RSVP by 30 Apr 2025</p>
         <form id="rsvpForm" class="flex flex-col gap-4 mt-6">
-            <input type="text" name="Name" placeholder="Your Name" required class="p-3 rounded-lg border border-gray-300">
-            <input type="email" name="Email" placeholder="Your Email" required class="p-3 rounded-lg border border-gray-300">
-            <input type="tel" name="Phone" placeholder="Your Phone (Optional)" class="p-3 rounded-lg border border-gray-300">
-            <input type="number" name="Pax" placeholder="Number of Guests" min="1" required class="p-3 rounded-lg border border-gray-300">
             <select name="Attendance" required class="p-3 rounded-lg border border-gray-300">
                 <option value="" disabled selected>Will you be attending?</option>
                 <option value="Yes">Yes, I’ll be there!</option>
                 <option value="No">Sorry, I can't make it</option>
             </select>
+            <div id="name">
+                <div class="relative">
+                    <input type="text" id="Name" name="Name" class="py-2.5 sm:py-3 px-4 ps-11 block w-full border-gray-200 rounded-lg sm:text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none" placeholder="Your Name" required>
+                    <div class="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-4">
+                        <svg class="shrink-0 size-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>
+                            <circle cx="9" cy="10" r="2"></circle>
+                            <path d="M15 8h2"></path>
+                            <path d="M15 12h4"></path>
+                            <path d="M9 14c-2.67 0-4 1.33-4 4"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div id="email">
+                <div class="relative">
+                    <input type="text" id="Email" name="Email" class="py-2.5 sm:py-3 px-4 ps-11 block w-full border-gray-200 rounded-lg sm:text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none" placeholder="Your Email" required>
+                    <div class="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-4">
+                        <svg class="shrink-0 size-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div id="phone">
+                <div class="relative">
+                    <input type="text" id="Phone" name="Phone" class="py-2.5 sm:py-3 px-4 ps-11 block w-full border-gray-200 rounded-lg sm:text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none" placeholder="Your Phone" required>
+                    <div class="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-4">
+                        <svg class="shrink-0 size-4 text-gray-400" xmls="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72 12.44 12.44 0 0 0 .71 2.83 2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.44 12.44 0 0 0 2.83.71A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <select name="Pax" required class="p-3 rounded-lg border border-gray-300">
+                <option value="" disabled selected>Number of Guest</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <!-- <div class="py-2 px-3 bg-white border border-gray-200 rounded-lg" data-hs-input-number="">
+                <div class="w-full flex justify-between items-center gap-x-3">
+                <div>
+                    <span class="block font-medium text-sm text-gray-800">
+                    Additional seats
+                    </span>
+                </div>
+                <div class="flex items-center gap-x-1.5">
+                    <button type="button" class="size-6 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md border border-gray-200 bg-white text-gray-800 shadow-2xs hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" tabindex="-1" aria-label="Decrease" data-hs-input-number-decrement="">
+                    <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"></path>
+                    </svg>
+                    </button>
+                    <input class="p-0 w-6 bg-transparent border-0 text-gray-800 text-center focus:ring-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none" style="-moz-appearance: textfield;" type="number" aria-roledescription="Number field" value="0" data-hs-input-number-input="">
+                    <button type="button" class="size-6 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md border border-gray-200 bg-white text-gray-800 shadow-2xs hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" tabindex="-1" aria-label="Increase" data-hs-input-number-increment="">
+                    <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5v14"></path>
+                    </svg>
+                    </button>
+                </div>
+                </div>
+            </div>
+            <input type="text" name="Name" placeholder="Your Name" required class="p-3 rounded-lg border border-gray-300">
+            <input type="tel" name="Phone" placeholder="Your Phone (Optional)" class="p-3 rounded-lg border border-gray-300">
+            <input type="number" name="Pax" placeholder="Number of Guests" min="1" required class="p-3 rounded-lg border border-gray-300"> -->
             <textarea name="Message" placeholder="Leave a message (Optional)" class="p-3 rounded-lg border border-gray-300"></textarea>
             <button type="submit" class="bg-pink-600 text-white py-3 px-5 rounded-lg font-bold hover:bg-pink-700">Submit RSVP</button>
         </form>
@@ -218,22 +317,15 @@
             })
             .catch(error => console.error("Error:", error));
         });
-        
-        function updateCountdown() {
-            const weddingDate = new Date("May 24, 2025 00:00:00");
-            const timerElement = document.getElementById("timer");
-            
-            function renderCountdown() {
-                const now = new Date();
-                const timeLeft = countdown(weddingDate, now, countdown.DAYS | countdown.HOURS | countdown.MINUTES | countdown.SECONDS).toString();
-                timerElement.innerHTML = `<strong>${timeLeft}</strong>`;
-            }
-            
-            renderCountdown();
-            setInterval(renderCountdown, 1000);
-        }
-        
-        updateCountdown();
+
+        simplyCountdown('#timer', {
+            year: 2025, // Target Year
+            month: 5,  // Target Month (1-12)
+            day: 24,    // Target Day (1-31)
+            hours: 0,   // Target Hour
+            minutes: 0, // Target Minutes
+            seconds: 0, // Target Seconds
+        });
     </script>
 </body>
 </html>
