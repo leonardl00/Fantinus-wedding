@@ -6,6 +6,7 @@
     <title>Wedding Invitation</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/countdown/2.6.0/countdown.min.js"></script>
+    <script src="https://kit.fontawesome.com/a14a6760a1.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -52,12 +53,8 @@
         .content-section {
             max-width: 90%;
             width: 600px;
-            background: #E8C6C6; /* Soft pastel pink */
             padding: 2rem;
             margin: 2rem auto;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border: 2px solid #D19E9E; /* Muted rose */
         }
         .bible-quote-section {
             background-color: white;
@@ -89,9 +86,37 @@
         <p class="text-lg italic mt-4">"So they are no longer two, but one flesh. Therefore what God has joined together, let no one separate." - Matthew 19:6</p>
     </div>
 
-    <div class="content-section text-lg font-bold">
-        <p>We can't wait to celebrate with you!</p>
-        <p id="timer" class="highlight-text text-xl font-semibold"></p>
+  <div class="content-section text-gray-900 text-center">
+        <div class="text-lg font-semibold">
+            <p>Mr. Peter Nise & Mrs. Victoria Sinau</p>
+            <span>together with</span>
+            <p>Mrs. Limen Rijen</p>
+        </div>
+        <div class="text-xl font-semibold mt-4">
+            <p>joyfully invite you to celebrate the marriage of their children</p>
+        </div>
+        <div class="text-3xl md:text-4xl highlight-text font-bold mt-4">
+            <p>Fantinus & Delyn</p>
+        </div>
+    </div>
+
+    <div class="content-section text-gray-900 text-center">
+        <h2 class="text-3xl md:text-4xl highlight-text">Date</h2>
+        <p class="text-lg mt-4">Saturday, 24 May 2025</p>
+    </div>
+
+    <div class="content-section text-gray-900 text-center">
+        <h2 class="text-3xl md:text-4xl highlight-text">Venue</h2>
+        <p class="text-lg mt-4">Grand Riverine Ballroom</p>
+        <span>Jalan Petanak, 93100 Kuching, Sarawak</span>
+        <div class="flex justify-center gap-4 mt-4">
+            <a href="https://waze.com/ul?ll=1.5523,110.3638&navigate=yes" target="_blank" class="text-blue-500 flex items-center gap-2">
+                <i class="fab fa-waze text-xl"></i> Waze
+            </a>
+            <a href="https://maps.google.com/?q=1.5523,110.3638" target="_blank" class="text-green-500 flex items-center gap-2">
+                <i class="fa-solid fa-map-location-dot"></i> Google Maps
+            </a>
+        </div>
     </div>
 
     <div class="content-section text-gray-900 text-center">
@@ -101,6 +126,12 @@
             <p>🎉 Wedding Reception - Grand Riverine Ballroom 1</p>
             <p>⏳ Guest Arrival: 6:00 PM | Dinner Begins: 7:00 PM</p>
         </div>
+    </div>
+
+    <div class="content-section text-lg font-bold">
+        <h2 class="text-3xl md:text-4xl highlight-text font-semibold">Countdown</h2>
+        <p>We can't wait to celebrate with you!</p>
+        <p id="timer" class="highlight-text text-xl font-semibold"></p>
     </div>
 
     <div class="content-section text-gray-900 text-center">
@@ -121,6 +152,7 @@
         </form>
         <p class="hidden text-lg font-bold highlight-text mt-4" id="thank-you">Thank you for your RSVP! 💖</p>
     </div>
+
     <script>
           document.getElementById("rsvpForm").addEventListener("submit", function(event) {
               event.preventDefault();
