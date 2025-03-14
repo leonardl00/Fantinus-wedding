@@ -1,0 +1,89 @@
+body {
+    font-family: 'Playfair Display', serif;
+    color: #4A4A4A;
+    overflow-x: hidden;
+    background-color: #F4E1D2;
+}
+#cover {
+    background: url('/assets/bg.jpg') no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 0rem;
+    position: relative;
+}
+
+#cover::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to bottom, rgba(244, 225, 210, 0) 0%, #F4E1D2 100%);
+}
+
+@media (max-width: 768px) {
+    #cover {
+        background: url('/assets/bg-vertical.jpg') no-repeat center center;
+        background-size: cover;
+        height: 100vh;
+        min-height: 100vh;
+        padding: 4rem 1rem;
+    }
+}
+
+.content-section {
+    max-width: 90%;
+    width: 600px;
+    padding: 1rem 2rem;
+    margin: 1rem auto;
+}
+
+.white-section {
+    background-color: white;
+    padding: 2rem;
+    width: 100%;
+}
+
+.birthstone-regular {
+    font-family: "Birthstone", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.dancing-script {
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+:root {
+    --color-primary: #ea9b9b; 
+    --color-secondary: #9b4d4d;
+}
+
+.border-primary {
+    border-color: var(--color-primary);
+}
+
+@layer utilities {
+    .bg-primary {
+        background-color: var(--color-primary);
+    }
+    .text-primary {
+        color: var(--color-primary);
+    }
+    .bg-secondary {
+        background-color: var(--color-secondary);
+    }
+    .text-secondary {
+        color: var(--color-secondary);
+    }
+}
