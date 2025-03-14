@@ -152,20 +152,20 @@
                 
                 <p class="text-2xl font-semibold mt-4">Fantinus</p>
                 <div class="flex justify-center gap-4 mt-4">
-                    <a href="https://wa.me/60123456789" class="bg-[#F4E1D2] text-white p-4 rounded-full text-2xl inline-flex items-center justify-center w-12 h-12">
+                    <a id="wa-fantinus" class="bg-[#F4E1D2] text-white p-4 rounded-full text-2xl inline-flex items-center justify-center w-12 h-12">
                         <i class="fab fa-whatsapp"></i>
                     </a>
-                    <a href="tel:+60123456789" class="bg-[#F4E1D2] text-white p-4 rounded-full text-2xl inline-flex items-center justify-center w-12 h-12">
+                    <a id="phone-fantinus" class="bg-[#F4E1D2] text-white p-4 rounded-full text-2xl inline-flex items-center justify-center w-12 h-12">
                         <i class="fas fa-phone"></i>
-                    </a>
+                    </a>                
                 </div>
                 
                 <p class="text-2xl font-semibold mt-4">Delyn</p>
                 <div class="flex justify-center gap-4 mt-4">
-                    <a href="https://wa.me/60198765432" class="bg-[#F4E1D2] text-white p-4 rounded-full text-2xl inline-flex items-center justify-center w-12 h-12">
+                    <a id="wa-delyn" class="bg-[#F4E1D2] text-white p-4 rounded-full text-2xl inline-flex items-center justify-center w-12 h-12">
                         <i class="fab fa-whatsapp"></i>
                     </a>
-                    <a href="tel:+60198765432" class="bg-[#F4E1D2] text-white p-4 rounded-full text-2xl inline-flex items-center justify-center w-12 h-12">
+                    <a id="phone-delyn" class="bg-[#F4E1D2] text-white p-4 rounded-full text-2xl inline-flex items-center justify-center w-12 h-12">
                         <i class="fas fa-phone"></i>
                     </a>
                 </div>
@@ -175,7 +175,7 @@
 
     <div class="content-section text-gray-900">
         <h2 class="text-3xl md:text-4xl highlight-text font-semibold text-center">~ R.S.V.P ~</h2>
-        <p class="text-lg mt-4">Please RSVP by 30 Apr 2025</p>
+        <p class="text-lg mt-4 font-[DynaPuff]">Please RSVP by 30 Apr 2025</p>
         <form id="rsvpForm" class="flex flex-col gap-4 mt-6">
             <select name="Attendance" required class="p-3 rounded-lg border border-gray-300">
                 <option value="" disabled selected>Will you be attending?</option>
@@ -308,6 +308,12 @@
             minutes: 0, // Target Minutes
             seconds: 0, // Target Seconds
         });
+
+        document.getElementById("wa-fantinus").href = "https://wa.me/" + atob("NjAxMzgxNDYyNzM=");
+        document.getElementById("phone-fantinus").href = "tel:+" + atob("NjAxMzgxNDYyNzM=");
+
+        document.getElementById("wa-delyn").href = "https://wa.me/" + atob("NjAxOTQ4NTY4NzM=");
+        document.getElementById("phone-delyn").href = "tel:+" + atob("NjAxOTQ4NTY4NzM=");
     </script>
 </body>
 </html>
