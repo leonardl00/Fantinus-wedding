@@ -178,11 +178,65 @@
         <h2 class="text-3xl md:text-4xl highlight-text font-semibold text-center">~ R.S.V.P ~</h2>
         <p class="text-lg mt-4 font-[DynaPuff]">Please RSVP by 30 Apr 2025</p>
         <form id="rsvpForm" class="flex flex-col gap-4 mt-6">
-            <select name="Attendance" required class="p-3 rounded-lg border border-gray-300">
-                <option value="" disabled selected>Will you be attending?</option>
-                <option value="Yes">Yes, I’ll be there!</option>
-                <option value="No">Sorry, I can't make it</option>
-            </select>
+            <div class="grid grid-cols-2 gap-4">
+                <!-- Attendance Details Column -->
+                <div class="p-4 border border-[#ea9b9b] bg-[#ea9b9b] shadow-md rounded-lg">
+                    <div class="text-center font-semibold text-lg mb-2">Holy Matrimony<br><span class="font-light">Church</span></div>
+                    
+                    <!-- Attendance Dropdown -->
+                    <select name="Church-Attandance" required class="p-3 rounded-lg border border-gray-300 w-full">
+                        <option value="" disabled selected>Will you be attending?</option>
+                        <option value="Yes">Yes, I’ll be there!</option>
+                        <option value="No">Sorry, I can't make it</option>
+                    </select>
+            
+                    <!-- Pax Dropdown -->
+                    <select name="Church-Pax" required class="p-3 rounded-lg border border-gray-300 w-full mt-2">
+                        <option value="" disabled selected>Number of Guests</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+            
+                <!-- Event Selection Column -->
+                <div class="p-4 border border-[#ea9b9b] bg-[#ea9b9b] shadow-md rounded-lg">
+                    <div class="text-center font-semibold text-lg mb-2">Reception<br><span class="font-light">Ballroom</span></div>
+            
+                    <!-- Attendance Dropdown -->
+                    <select name="Reception-Attendance" required class="p-3 rounded-lg border border-gray-300 w-full">
+                        <option value="" disabled selected>Will you be attending?</option>
+                        <option value="Yes">Yes, I’ll be there!</option>
+                        <option value="No">Sorry, I can't make it</option>
+                    </select>
+            
+                    <!-- Pax Dropdown -->
+                    <select name="Reception-Pax" required class="p-3 rounded-lg border border-gray-300 w-full mt-2">
+                        <option value="" disabled selected>Number of Guests</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+            </div>
+            
+            
             <div id="name">
                 <div class="relative">
                     <input type="text" id="Name" name="Name" class="py-2.5 sm:py-3 px-4 ps-11 block w-full border-gray-200 rounded-lg sm:text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none" placeholder="Your Name" required>
@@ -218,20 +272,6 @@
                     </div>
                 </div>
             </div>
-            <select name="Pax" required class="p-3 rounded-lg border border-gray-300">
-                <option value="" disabled selected>Number of Guest</option>
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-            </select>
             <!-- <div class="py-2 px-3 bg-white border border-gray-200 rounded-lg" data-hs-input-number="">
                 <div class="w-full flex justify-between items-center gap-x-3">
                 <div>
@@ -259,7 +299,7 @@
             <input type="tel" name="Phone" placeholder="Your Phone (Optional)" class="p-3 rounded-lg border border-gray-300">
             <input type="number" name="Pax" placeholder="Number of Guests" min="1" required class="p-3 rounded-lg border border-gray-300"> -->
             <textarea name="Message" placeholder="Leave a message (Optional)" class="p-3 rounded-lg border border-gray-300"></textarea>
-            <button type="submit" class=" text-white py-3 px-5 rounded-lg font-bold hover:scale-110 bg-[#ea9b9b] hover:shadow-xl transition-all">Submit RSVP</button>
+            <button type="submit" class=" text-gray-900 py-3 px-5 rounded-lg font-bold hover:scale-110 bg-[#ea9b9b] hover:shadow-xl transition-all">Submit RSVP</button>
         </form>
         <p class="hidden text-lg font-bold highlight-text mt-4" id="thank-you">Thank you for your RSVP! 💖</p>
     </div>
